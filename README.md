@@ -93,7 +93,7 @@ Deploy as a web application
 🎥 Demo
 
 👉 Add your demo video link here
-
+https://youtu.be/yMgygeQSuCQ?si=swz2BvK4rGRh9mdY
 
 Link used for testing of SnapDeal :
 https://m.snapdeal.com/product/leavess-6-socket-extension-board/645549433371?vendorCode=Sf7f5a&pa=true&fv=true&supc=SDL448569501&utm_campaign=category_fallback&utm_medium=ProductAds&isSellerPage=true#reviews
