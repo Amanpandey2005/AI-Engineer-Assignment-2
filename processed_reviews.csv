@@ -1,0 +1,3 @@
+author,date,rating,text,analysis
+Snapdeal Customer,Recent,5,Gud quality nd easy delivered,API Error: Error code: 410 - {'error': 'https://api-inference.huggingface.co is no longer supported. Please use https://router.huggingface.co instead.'}
+Snapdeal Customer,Recent,5,Nice product good working fast delivery 👍,API Error: Error code: 410 - {'error': 'https://api-inference.huggingface.co is no longer supported. Please use https://router.huggingface.co instead.'}
