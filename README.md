@@ -1,6 +1,106 @@
-AI Review Analyzer: End-to-End Sentiment Pipeline📌 Project ObjectiveThis application is designed to automate the extraction and analysis of e-commerce product reviews. It bridges the gap between raw web data and actionable insights by using a modular Python scraping engine and an OpenAI-compatible LLM API (Hugging Face Inference).🚀 FeaturesRobust Web Scraping: Extracts review text, author names, and ratings from dynamic e-commerce layouts.Data Preprocessing: Cleans noise, handles encoding issues, and utilizes tiktoken for token-aware text segmentation.AI Integration: Connects to the Mistral-7B-Instruct model via Hugging Face to generate concise sentiment summaries.Structured Storage: Automatically exports processed data and AI insights into a CSV format.Secure Configuration: Uses environment variables for API key management to ensure security.🛠️ Tech StackLanguage: Python Scraping: BeautifulSoup4 & Requests Data Handling: Pandas LLM Interface: OpenAI Python Client (connected to Hugging Face) Tokenization: Tiktoken 📋 Installation & SetupClone the Repository:Bashgit clone <your-repo-link>
-cd AI-Internship
-Install Dependencies:Bashpip install -r requirements.txt
-Environment Variables:Create a .env file in the root directory and add your Hugging Face token:Code snippetHF_TOKEN=your_hugging_face_token_here
-🏃 How to RunExecute the main script:Bashpython main.py
-Test URL: When prompted, enter the following URL (used for testing):https://www.snapdeal.com/product/leavess-6-socket-extension-board/645549433371/reviews The system will fetch the reviews, process them through the LLM, and save the output to data/processed_reviews.csv.🏗️ Design Choices & ArchitectureModularity: The project is split into scraper.py, processor.py, and llm_service.py. This ensures that if the website layout changes, only the scraper module needs updating without breaking the AI logic.Token Management: Used tiktoken to segment long reviews. This prevents API "Context Window" errors and ensures cost-effective processing.Error Handling: Implemented try-except blocks to manage 403 Forbidden errors, network timeouts, and API rate limits.⚠️ LimitationsAnti-Bot Protections: Some sites (like Amazon/Croma) use aggressive Javascript-based protection (403 errors). This scraper is optimized for standard HTML structures.Rate Limits: The Hugging Face free tier has a usage cap; for large datasets, a "Wait for Model" logic would be required in a production environment.🎥 Video DemonstrationA 5-minute walkthrough of the code and a live execution can be found [Link to your Video/YouTube].Developed by: [Your Name]Deadline: 72 Hours 
+🚀 AI Review Analyzer: End-to-End Sentiment Pipeline
+📌 Overview
+
+The AI Review Analyzer is an automated pipeline that extracts, processes, and analyzes product reviews from e-commerce websites. It transforms raw, unstructured customer feedback into meaningful insights using web scraping and Large Language Models (LLMs).
+
+This project demonstrates how to integrate data extraction + NLP + AI models into a complete real-world system.
+
+🎯 Objective
+Automate review extraction from websites
+Clean and preprocess textual data
+Generate sentiment insights using LLM
+Store structured outputs for analysis
+✨ Features
+🔍 Web Scraping
+Extracts review text, usernames, and ratings
+Works on standard HTML-based e-commerce pages
+🧹 Data Preprocessing
+Removes noise and special characters
+Handles encoding issues
+Token-based text chunking using tiktoken
+🤖 AI Sentiment Analysis
+Uses Mistral-7B-Instruct via Hugging Face API
+Generates concise sentiment summaries
+📊 Data Storage
+Saves results into a CSV file
+Includes:
+Cleaned reviews
+Ratings
+AI-generated sentiment
+🔐 Security
+Uses .env file for API key management
+🛠️ Tech Stack
+Language: Python
+Web Scraping: BeautifulSoup4, Requests
+Data Processing: Pandas
+LLM Integration: OpenAI Python Client (Hugging Face)
+Tokenization: Tiktoken
+📂 Project Structure
+AI-Review-Analyzer/
+│── scraper.py        # Extracts reviews from website
+│── processor.py      # Cleans and preprocesses data
+│── llm_service.py    # Handles LLM API calls
+│── main.py           # Entry point
+│── requirements.txt
+│── .env              # API keys (not uploaded to GitHub)
+│── data/
+│    └── processed_reviews.csv
+⚙️ Installation
+1️⃣ Clone Repository
+git clone https://github.com/your-username/AI-Review-Analyzer.git
+cd AI-Review-Analyzer
+2️⃣ Install Dependencies
+pip install -r requirements.txt
+3️⃣ Setup Environment Variables
+
+Create a .env file:
+
+HF_TOKEN=your_hugging_face_token_here
+▶️ Usage
+
+Run the application:
+
+python main.py
+🔗 Test URL
+
+Use this sample URL:
+
+https://www.snapdeal.com/product/leavess-6-socket-extension-board/645549433371/reviews
+📤 Output
+
+Processed data will be saved in:
+
+data/processed_reviews.csv
+🏗️ Architecture
+        Website
+           ↓
+      scraper.py
+           ↓
+     processor.py
+           ↓
+     llm_service.py
+           ↓
+   processed_reviews.csv
+⚠️ Limitations
+❌ Some websites block scraping (403 errors)
+❌ JavaScript-heavy pages not supported
+❌ Hugging Face API rate limits (free tier)
+🔮 Future Improvements
+Add Streamlit Dashboard for visualization
+Use Selenium/Playwright for dynamic scraping
+Implement aspect-based sentiment analysis
+Deploy as a web application
+🎥 Demo
+
+👉 Add your demo video link here
+
+
+Link used for testing of SnapDeal :
+https://m.snapdeal.com/product/leavess-6-socket-extension-board/645549433371?vendorCode=Sf7f5a&pa=true&fv=true&supc=SDL448569501&utm_campaign=category_fallback&utm_medium=ProductAds&isSellerPage=true#reviews
+
+👨‍💻 Author
+Aman Pandey
+
+⭐ Contributing
+
+Contributions are welcome! Feel free to fork this repo and submit a pull request.
